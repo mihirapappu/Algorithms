@@ -1,0 +1,17 @@
+a=int(input("num of elem: "))
+array=[]
+for i in range(a):
+  b=int(input())
+  array.append(b)
+num=int(input("num: "))
+def subsetsum(array,num):
+
+    if num == 0 or num < 1:
+        return False
+    elif len(array) == 0:
+        return False
+    else:
+        if array[0] == num:
+            return True
+        else:
+            return subsetsum(array[1:],(num - array[0])) or subsetsum(array[1:],num)
